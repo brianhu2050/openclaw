@@ -57,5 +57,54 @@ Agent 循环 (Agent Loop) 是系统的核心工作流：
 - **配对机制**: 新设备连接 WebSocket 需要显式批准。
 - **DM 策略**: 针对陌生人的私聊，支持配对码校验。
 
+## 6. Skill 系统分析 (Skill Analysis)
+
+OpenClaw 提供了丰富的内置技能，涵盖了通讯、生产力、AI 创意和系统管理等多个领域。
+
+![OpenClaw Skills 分析图](openclaw_skills.svg)
+
+### 6.1 技能分类
+
+- **通讯与社交**: 集成了 Discord, Slack, WhatsApp (wacli), iMessage (BlueBubbles) 等。
+- **生产力**: 支持 Notion, Trello, Apple Notes, Obsidian 等笔记与任务管理工具。
+- **AI 增强**: 提供图像生成 (DALL-E), 语音转文字 (Whisper), 以及针对 Gemini 的专用支持。
+- **系统工具**: 包含终端管理 (Tmux), 编码助手 (Coding-agent), 以及 GitHub 集成。
+
+## 7. Skill 扩展设计方案 (Skill Expansion Design)
+
+OpenClaw 的技能系统基于 [AgentSkills](https://agentskills.io) 标准，旨在实现高度的可扩展性和零成本的技能发现。
+
+### 7.1 设计核心：SKILL.md
+
+每个技能都是一个独立的目录，核心是一个 `SKILL.md` 文件。该文件包含：
+
+- **YAML Frontmatter**: 定义技能名称、描述、Emoji 以及运行依赖（Metadata）。
+- **自然语言说明**: 告诉 Agent 什么时候**应该**使用该技能，什么时候**不应该**使用。
+- **执行示例**: 提供具体的 shell 命令或代码片段供 Agent 参考。
+
+### 7.2 扩展实现路径
+
+开发者可以通过以下三种方式扩展技能：
+
+1. **工作区技能 (Workspace Skills)**: 在 `~/.openclaw/workspace/skills` 下创建新技能，仅对当前 Agent 生效。
+2. **本地技能 (Local Skills)**: 在 `~/.openclaw/skills` 下创建，对所有 Agent 可见。
+3. **ClawHub 分发**: 通过 [ClawHub](https://clawhub.com) 注册并分发技能，支持一键安装和更新。
+
+### 7.3 加载与门禁机制 (Gating)
+
+Gateway 在加载技能时会根据 `metadata` 进行自动过滤：
+
+- **Binary 检查**: 检查 `PATH` 中是否存在所需的执行文件（如 `curl`, `ffmpeg`）。
+- **环境变量**: 校验是否配置了必要的 API Key。
+- **配置项**: 确保 `openclaw.json` 中的相关开关已打开。
+
+### 7.4 优先级策略 (Precedence)
+
+当出现同名技能时，加载优先级如下：
+
+`Workspace > Local > Bundled (内置)`
+
+这种设计确保了用户可以轻松覆盖内置行为，或为特定 Agent 量身定制功能。
+
 ---
 *文档生成日期: 2025年1月*

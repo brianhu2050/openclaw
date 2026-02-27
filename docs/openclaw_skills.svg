@@ -1,0 +1,94 @@
+<svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="800" fill="#fcfcfc" />
+
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#333" text-anchor="middle">OpenClaw Skills 分类分析</text>
+
+  <!-- 1. Messaging & Social (Communication) -->
+  <rect x="50" y="80" width="280" height="200" rx="10" ry="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+  <text x="190" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1565c0" text-anchor="middle">通讯与社交</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="70" y="140">· Discord / Slack</text>
+    <text x="70" y="165">· BlueBubbles / imsg</text>
+    <text x="70" y="190">· wacli (WhatsApp)</text>
+    <text x="70" y="215">· voice-call</text>
+    <text x="70" y="240">· himalaya (Email)</text>
+  </g>
+
+  <!-- 2. Productivity & Notes -->
+  <rect x="360" y="80" width="280" height="200" rx="10" ry="10" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+  <text x="500" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2e7d32" text-anchor="middle">生产力与笔记</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="380" y="140">· Notion / Trello</text>
+    <text x="380" y="165">· Apple Notes / Reminders</text>
+    <text x="380" y="190">· Obsidian / Bear-Notes</text>
+    <text x="380" y="215">· Things-mac</text>
+    <text x="380" y="240">· Summarize</text>
+  </g>
+
+  <!-- 3. AI & Creative -->
+  <rect x="670" y="80" width="280" height="200" rx="10" ry="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+  <text x="810" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e65100" text-anchor="middle">AI 与创意</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="690" y="140">· OpenAI Image-Gen</text>
+    <text x="690" y="165">· OpenAI Whisper (API)</text>
+    <text x="690" y="190">· Gemini</text>
+    <text x="690" y="215">· Video-frames</text>
+    <text x="690" y="240">· Canvas / Skill-creator</text>
+  </g>
+
+  <!-- 4. System & Tools -->
+  <rect x="50" y="320" width="280" height="200" rx="10" ry="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+  <text x="190" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#6a1b9a" text-anchor="middle">系统与工具</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="70" y="380">· Tmux / Coding-agent</text>
+    <text x="70" y="405">· Github (Issues/Events)</text>
+    <text x="70" y="430">· 1Password</text>
+    <text x="70" y="455">· Healthcheck</text>
+    <text x="70" y="480">· Nano-PDF / XURL</text>
+  </g>
+
+  <!-- 5. Media & Home -->
+  <rect x="360" y="320" width="280" height="200" rx="10" ry="10" fill="#fbe9e7" stroke="#ff5722" stroke-width="2"/>
+  <text x="500" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#bf360c" text-anchor="middle">媒体与智能家居</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="380" y="380">· Spotify-player</text>
+    <text x="380" y="405">· Sonoscli</text>
+    <text x="380" y="430">· OpenHue (Lighting)</text>
+    <text x="380" y="455">· Songsee</text>
+    <text x="380" y="480">· GOG (Gaming)</text>
+  </g>
+
+  <!-- 6. Information & Misc -->
+  <rect x="670" y="320" width="280" height="200" rx="10" ry="10" fill="#fafafa" stroke="#9e9e9e" stroke-width="2"/>
+  <text x="810" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#424242" text-anchor="middle">信息与其它</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+    <text x="690" y="380">· Weather</text>
+    <text x="690" y="405">· GoPlaces (Maps)</text>
+    <text x="690" y="430">· Blogwatcher</text>
+    <text x="690" y="455">· Peekaboo</text>
+    <text x="690" y="480">· Model-usage</text>
+  </g>
+
+  <!-- Design Philosophy Section -->
+  <rect x="50" y="550" width="900" height="200" rx="10" ry="10" fill="#fff9c4" stroke="#fbc02d" stroke-width="2"/>
+  <text x="500" y="585" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f57f17" text-anchor="middle">Skill 设计哲学：AgentSkills 标准</text>
+
+  <rect x="80" y="610" width="250" height="120" rx="5" ry="5" fill="#fffde7" stroke="#fbc02d" stroke-dasharray="5,5"/>
+  <text x="205" y="635" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">结构化声明</text>
+  <text x="95" y="665" font-family="Arial, sans-serif" font-size="13">· SKILL.md 文件核心</text>
+  <text x="95" y="685" font-family="Arial, sans-serif" font-size="13">· YAML Frontmatter 元数据</text>
+  <text x="95" y="705" font-family="Arial, sans-serif" font-size="13">· 自然语言描述使用场景</text>
+
+  <rect x="375" y="610" width="250" height="120" rx="5" ry="5" fill="#fffde7" stroke="#fbc02d" stroke-dasharray="5,5"/>
+  <text x="500" y="635" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">运行时门禁</text>
+  <text x="390" y="665" font-family="Arial, sans-serif" font-size="13">· 自动检测 Binary 依赖</text>
+  <text x="390" y="685" font-family="Arial, sans-serif" font-size="13">· 校验环境变量 (API Key)</text>
+  <text x="390" y="705" font-family="Arial, sans-serif" font-size="13">· 适配操作系统 (Darwin/Linux)</text>
+
+  <rect x="670" y="610" width="250" height="120" rx="5" ry="5" fill="#fffde7" stroke="#fbc02d" stroke-dasharray="5,5"/>
+  <text x="795" y="635" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">多层覆盖机制</text>
+  <text x="685" y="665" font-family="Arial, sans-serif" font-size="13">· Workspace > Local > Bundled</text>
+  <text x="685" y="685" font-family="Arial, sans-serif" font-size="13">· 动态加载与热更新</text>
+  <text x="685" y="705" font-family="Arial, sans-serif" font-size="13">· ClawHub 统一分发</text>
+</svg>
