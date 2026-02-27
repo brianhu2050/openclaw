@@ -1,0 +1,76 @@
+<svg width="800" height="800" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="800" fill="#ffffff" />
+
+  <!-- Participants -->
+  <line x1="100" y1="50" x2="100" y2="750" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+  <rect x="50" y="20" width="100" height="40" fill="#e9ecef" stroke="#333" stroke-width="2" />
+  <text x="100" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">User/Channel</text>
+
+  <line x1="300" y1="50" x2="300" y2="750" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+  <rect x="250" y="20" width="100" height="40" fill="#007bff" stroke="#333" stroke-width="2" />
+  <text x="300" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Gateway</text>
+
+  <line x1="500" y1="50" x2="500" y2="750" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+  <rect x="450" y="20" width="100" height="40" fill="#28a745" stroke="#333" stroke-width="2" />
+  <text x="500" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Pi Agent</text>
+
+  <line x1="700" y1="50" x2="700" y2="750" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+  <rect x="650" y="20" width="100" height="40" fill="#ffc107" stroke="#333" stroke-width="2" />
+  <text x="700" y="45" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">LLM / Tools</text>
+
+  <!-- Interaction 1: Message Inbound -->
+  <line x1="100" y1="100" x2="290" y2="100" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="200" y="90" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Inbound Message</text>
+
+  <!-- Interaction 2: Start Agent -->
+  <line x1="300" y1="140" x2="490" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">req:agent</text>
+
+  <!-- Interaction 3: Ack -->
+  <line x1="490" y1="180" x2="310" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="400" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">res:agent {runId}</text>
+
+  <!-- Interaction 4: Model Inference -->
+  <line x1="500" y1="230" x2="690" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Prompt + Context</text>
+
+  <!-- Interaction 5: Tool Call Needed -->
+  <line x1="690" y1="280" x2="510" y2="280" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="600" y="270" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Tool Call requested</text>
+
+  <!-- Interaction 6: Execute Tool -->
+  <line x1="500" y1="330" x2="690" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Execute bash/browser/etc.</text>
+
+  <!-- Interaction 7: Tool Result -->
+  <line x1="690" y1="380" x2="510" y2="380" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="600" y="370" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Tool Result</text>
+
+  <!-- Interaction 8: Stream Assistant Text -->
+  <line x1="500" y1="430" x2="310" y2="430" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="405" y="420" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">event:agent (assistant stream)</text>
+
+  <!-- Interaction 9: Forward to Channel -->
+  <line x1="300" y1="470" x2="110" y2="470" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="205" y="460" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Forward Delta Message</text>
+
+  <!-- Interaction 10: Model Completes -->
+  <line x1="690" y1="520" x2="510" y2="520" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="600" y="510" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Final Content</text>
+
+  <!-- Interaction 11: Lifecycle End -->
+  <line x1="500" y1="570" x2="310" y2="570" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="405" y="560" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">event:agent (lifecycle end)</text>
+
+  <!-- Interaction 12: Final Message -->
+  <line x1="300" y1="620" x2="110" y2="620" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="205" y="610" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Final Reply Delivered</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

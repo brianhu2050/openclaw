@@ -1,0 +1,54 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+
+  <!-- Gateway (Central) -->
+  <rect x="300" y="250" width="200" height="100" rx="10" ry="10" fill="#007bff" stroke="#0056b3" stroke-width="2"/>
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">Gateway</text>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(Control Plane)</text>
+
+  <!-- Channels (Top) -->
+  <rect x="50" y="50" width="700" height="80" rx="10" ry="10" fill="#e9ecef" stroke="#dee2e6" stroke-width="2"/>
+  <text x="400" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#495057" text-anchor="middle">Channels (Messaging Surfaces)</text>
+  <text x="400" y="105" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">WhatsApp · Telegram · Slack · Discord · Signal · iMessage · WebChat · etc.</text>
+
+  <!-- Clients (Left) -->
+  <rect x="50" y="200" width="150" height="200" rx="10" ry="10" fill="#e9ecef" stroke="#dee2e6" stroke-width="2"/>
+  <text x="125" y="225" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#495057" text-anchor="middle">Clients</text>
+  <text x="125" y="260" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">CLI (openclaw)</text>
+  <text x="125" y="290" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Web UI / Control UI</text>
+  <text x="125" y="320" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">macOS App</text>
+  <text x="125" y="350" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">WebChat UI</text>
+
+  <!-- Nodes (Right) -->
+  <rect x="600" y="200" width="150" height="200" rx="10" ry="10" fill="#e9ecef" stroke="#dee2e6" stroke-width="2"/>
+  <text x="675" y="225" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#495057" text-anchor="middle">Nodes</text>
+  <text x="675" y="260" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">iOS Node</text>
+  <text x="675" y="290" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Android Node</text>
+  <text x="675" y="320" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">macOS Node</text>
+  <text x="675" y="350" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Headless Node</text>
+
+  <!-- Agent Runtime (Bottom) -->
+  <rect x="300" y="450" width="200" height="100" rx="10" ry="10" fill="#28a745" stroke="#1e7e34" stroke-width="2"/>
+  <text x="400" y="500" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">Pi Agent Runtime</text>
+  <text x="400" y="525" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">(LLM &amp; Tool Orchestration)</text>
+
+  <!-- Connectors -->
+  <line x1="400" y1="130" x2="400" y2="250" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="200" y1="300" x2="300" y2="300" stroke="#adb5bd" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="300" x2="600" y2="300" stroke="#adb5bd" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="350" x2="400" y2="450" stroke="#adb5bd" stroke-width="2" marker-start="url(#arrowhead)" marker-end="url(#arrowhead)"/>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd" />
+    </marker>
+  </defs>
+
+  <!-- Labels -->
+  <text x="410" y="190" font-family="Arial, sans-serif" font-size="12" fill="#495057">Providers (Baileys, grammY, etc.)</text>
+  <text x="210" y="285" font-family="Arial, sans-serif" font-size="12" fill="#495057">WebSocket (JSON)</text>
+  <text x="510" y="285" font-family="Arial, sans-serif" font-size="12" fill="#495057">WebSocket (Role: Node)</text>
+  <text x="410" y="405" font-family="Arial, sans-serif" font-size="12" fill="#495057">RPC / Events</text>
+</svg>
