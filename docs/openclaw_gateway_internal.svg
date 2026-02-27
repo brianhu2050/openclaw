@@ -1,0 +1,93 @@
+<svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="800" fill="#fafafa" />
+
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">OpenClaw Gateway 内部构造 (Deep Dive)</text>
+
+  <!-- External Interfaces -->
+  <rect x="50" y="80" width="900" height="60" rx="5" fill="#f1f3f4" stroke="#bdc3c7"/>
+  <text x="500" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#5f6368" text-anchor="middle">外部接口层 (HTTP / WebSocket Server)</text>
+
+  <!-- Gateway Core Box -->
+  <rect x="50" y="160" width="900" height="580" rx="10" ry="10" fill="white" stroke="#007bff" stroke-width="2"/>
+
+  <!-- Server Dispatcher -->
+  <rect x="80" y="190" width="250" height="150" rx="5" fill="#e8f0fe" stroke="#1a73e8"/>
+  <text x="205" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a73e8" text-anchor="middle">WS Connection Manager</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#3c4043">
+    <text x="100" y="245">· Handshake &amp; Auth</text>
+    <text x="100" y="270">· Heartbeat / Keepalive</text>
+    <text x="100" y="295">· Device Token Tracking</text>
+    <text x="100" y="320">· Role Policy (Client/Node)</text>
+  </g>
+
+  <!-- RPC Methods -->
+  <rect x="360" y="190" width="250" height="150" rx="5" fill="#e6fffa" stroke="#319795"/>
+  <text x="485" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c7a7b" text-anchor="middle">Server Methods (RPC)</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#3c4043">
+    <text x="380" y="245">· agent.invoke / agent.wait</text>
+    <text x="380" y="270">· message.send</text>
+    <text x="380" y="295">· cron.* (Scheduler API)</text>
+    <text x="380" y="320">· sessions.list / patch</text>
+  </g>
+
+  <!-- Session Router -->
+  <rect x="640" y="190" width="280" height="150" rx="5" fill="#fff5f5" stroke="#e53e3e"/>
+  <text x="780" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c53030" text-anchor="middle">Session &amp; Lane Router</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#3c4043">
+    <text x="660" y="245">· Session Key Resolution</text>
+    <text x="660" y="270">· Execution Lane Locking</text>
+    <text x="660" y="295">· Transcript Management</text>
+    <text x="660" y="320">· History Sanitization</text>
+  </g>
+
+  <!-- Channel Adapters -->
+  <rect x="80" y="380" width="840" height="120" rx="5" fill="#f7fafc" stroke="#4a5568" stroke-dasharray="5,5"/>
+  <text x="500" y="405" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2d3748" text-anchor="middle">Channel Adapters (Providers)</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#4a5568">
+    <rect x="100" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="160" y="460" text-anchor="middle">WhatsApp (Baileys)</text>
+
+    <rect x="235" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="295" y="460" text-anchor="middle">Telegram (grammY)</text>
+
+    <rect x="370" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="430" y="460" text-anchor="middle">Slack (Bolt)</text>
+
+    <rect x="505" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="565" y="460" text-anchor="middle">Discord (d.js)</text>
+
+    <rect x="640" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="700" y="460" text-anchor="middle">iMessage / Signal</text>
+
+    <rect x="775" y="425" width="120" height="60" rx="5" fill="white" stroke="#cbd5e0"/>
+    <text x="835" y="460" text-anchor="middle">WebChat / custom</text>
+  </g>
+
+  <!-- Internal Infrastructure -->
+  <rect x="80" y="530" width="400" height="180" rx="5" fill="#fffaf0" stroke="#ed8936"/>
+  <text x="280" y="555" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c05621" text-anchor="middle">Platform Core</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#3c4043">
+    <text x="100" y="585">· Config Hot-Reload</text>
+    <text x="100" y="610">· Credential Precedence Engine</text>
+    <text x="100" y="635">· Plugin Lifecycle Manager</text>
+    <text x="100" y="660">· Hook Trigger System (Internal)</text>
+    <text x="100" y="685">· Media Pipeline (Sharp/FFmpeg)</text>
+  </g>
+
+  <!-- Node & Capability -->
+  <rect x="520" y="530" width="400" height="180" rx="5" fill="#f0fff4" stroke="#48bb78"/>
+  <text x="720" y="555" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2f855a" text-anchor="middle">Node &amp; Capability Registry</text>
+  <g font-family="Arial, sans-serif" font-size="12" fill="#3c4043">
+    <text x="540" y="585">· Remote Node Tracking</text>
+    <text x="540" y="610">· Capability Map (camera, canvas...)</text>
+    <text x="540" y="635">· Exec Approval Manager (TCC)</text>
+    <text x="540" y="660">· Node Invoke Dispatcher</text>
+    <text x="540" y="685">· Bonjour / Discovery Backend</text>
+  </g>
+
+  <!-- Cross-Cutting Lines -->
+  <line x1="205" y1="340" x2="205" y2="380" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="485" y1="340" x2="485" y2="380" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="780" y1="340" x2="780" y2="380" stroke="#cbd5e0" stroke-width="1" stroke-dasharray="2,2"/>
+</svg>

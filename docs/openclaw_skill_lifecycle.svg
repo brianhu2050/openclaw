@@ -1,0 +1,86 @@
+<svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="800" fill="#fffefb" />
+
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">OpenClaw Skill 生命周期与执行机制</text>
+
+  <!-- Stage 1: Discovery -->
+  <rect x="50" y="80" width="280" height="180" rx="10" ry="10" fill="#f0f7ff" stroke="#007bff"/>
+  <text x="190" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0056b3" text-anchor="middle">1. 发现 (Discovery)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <text x="70" y="140">· Scan Bundle Folders</text>
+    <text x="70" y="165">· Scan ~/.openclaw/skills</text>
+    <text x="70" y="190">· Scan Workspace skills</text>
+    <text x="70" y="215">· Watch for SKILL.md changes</text>
+  </g>
+
+  <!-- Stage 2: Gating & eligibility -->
+  <rect x="360" y="80" width="280" height="180" rx="10" ry="10" fill="#fff7e6" stroke="#faad14"/>
+  <text x="500" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#d48806" text-anchor="middle">2. 门禁 (Gating)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <text x="380" y="140">· Binary Presence Probe</text>
+    <text x="380" y="165">· Env Var / API Key Check</text>
+    <text x="380" y="190">· OS / Platform Filter</text>
+    <text x="380" y="215">· Config Path Validation</text>
+  </g>
+
+  <!-- Stage 3: Snapshot -->
+  <rect x="670" y="80" width="280" height="180" rx="10" ry="10" fill="#f6ffed" stroke="#52c41a"/>
+  <text x="810" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#389e0d" text-anchor="middle">3. 快照 (Snapshot)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#333">
+    <text x="690" y="140">· Precedence Resolution</text>
+    <text x="690" y="165">· Summarize Descriptions</text>
+    <text x="690" y="190">· Generate XML for Prompt</text>
+    <text x="690" y="215">· Cache for Session Duration</text>
+  </g>
+
+  <!-- Execution Plane -->
+  <rect x="50" y="320" width="900" height="400" rx="15" ry="15" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="500" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">4. 执行机制 (Execution Mechanics)</text>
+
+  <!-- Host Exec -->
+  <rect x="80" y="380" width="400" height="280" rx="10" fill="#f9f9f9" stroke="#999" stroke-dasharray="5,5"/>
+  <text x="280" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#666" text-anchor="middle">宿主环境 (Host Exec)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#444">
+    <rect x="100" y="430" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="280" y="455" text-anchor="middle">直接调用系统 Shell (bash.run)</text>
+
+    <rect x="100" y="485" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="280" y="510" text-anchor="middle">环境变量注入 (process.env)</text>
+
+    <rect x="100" y="540" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="280" y="565" text-anchor="middle">Pty 伪终端支持 (交互式)</text>
+
+    <rect x="100" y="595" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="280" y="620" text-anchor="middle">宿主文件权限 (TCC/SIP)</text>
+  </g>
+
+  <!-- Sandbox Exec -->
+  <rect x="520" y="380" width="400" height="280" rx="10" fill="#fff1f0" stroke="#f5222d" stroke-dasharray="5,5"/>
+  <text x="720" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#cf1322" text-anchor="middle">沙箱环境 (Docker Sandbox)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#444">
+    <rect x="540" y="430" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="720" y="455" text-anchor="middle">隔离的 Rootfs 与 进程空间</text>
+
+    <rect x="540" y="485" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="720" y="510" text-anchor="middle">Workspace 目录挂载 (Read-Write)</text>
+
+    <rect x="540" y="540" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="720" y="565" text-anchor="middle">CPU/Memory 资源配额限制</text>
+
+    <rect x="540" y="595" width="360" height="40" rx="5" fill="#fff" stroke="#ccc"/>
+    <text x="720" y="620" text-anchor="middle">非主会话强制隔离 (non-main mode)</text>
+  </g>
+
+  <!-- Final step -->
+  <text x="500" y="760" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1890ff" text-anchor="middle">输出结果回传 -> Session Transcript 持久化</text>
+
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ccc" />
+    </marker>
+  </defs>
+  <line x1="330" y1="170" x2="360" y2="170" stroke="#ccc" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="640" y1="170" x2="670" y2="170" stroke="#ccc" stroke-width="2" marker-end="url(#arrowhead)"/>
+</svg>
