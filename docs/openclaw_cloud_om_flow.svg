@@ -1,0 +1,77 @@
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="600" fill="#f4f7f6" />
+
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#2c3e50" text-anchor="middle">OpenClaw 云计算运维数据分析流 (Cloud O&amp;M Analysis Flow)</text>
+
+  <!-- Data Sources -->
+  <rect x="50" y="80" width="180" height="400" rx="10" ry="10" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="140" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7f8c8d" text-anchor="middle">数据源 (Sources)</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#34495e">
+    <rect x="70" y="130" width="140" height="50" rx="5" fill="#fff" stroke="#bdc3c7"/>
+    <text x="140" y="160" text-anchor="middle">云资源指标 (Metric)</text>
+
+    <rect x="70" y="200" width="140" height="50" rx="5" fill="#fff" stroke="#bdc3c7"/>
+    <text x="140" y="230" text-anchor="middle">系统/应用日志 (Log)</text>
+
+    <rect x="70" y="270" width="140" height="50" rx="5" fill="#fff" stroke="#bdc3c7"/>
+    <text x="140" y="300" text-anchor="middle">成本明细 (Billing)</text>
+
+    <rect x="70" y="340" width="140" height="50" rx="5" fill="#fff" stroke="#bdc3c7"/>
+    <text x="140" y="370" text-anchor="middle">业务数据库 (DB)</text>
+  </g>
+
+  <!-- OpenClaw Platform (Central) -->
+  <rect x="300" y="150" width="400" height="300" rx="15" ry="15" fill="#fff" stroke="#3498db" stroke-width="3"/>
+  <text x="500" y="185" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2980b9" text-anchor="middle">OpenClaw 智能处理中心</text>
+
+  <!-- Internal Skills -->
+  <rect x="330" y="210" width="340" height="60" rx="8" fill="#e1f5fe" stroke="#03a9f4"/>
+  <text x="500" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#01579b" text-anchor="middle">Collector Skill (抓取/ETL)</text>
+
+  <rect x="330" y="285" width="340" height="60" rx="8" fill="#e8f5e9" stroke="#4caf50"/>
+  <text x="500" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20" text-anchor="middle">Analyzer Skill (分析/预测)</text>
+
+  <rect x="330" y="360" width="340" height="60" rx="8" fill="#fff3e0" stroke="#ff9800"/>
+  <text x="500" y="395" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100" text-anchor="middle">Reporter Skill (报表/可视化)</text>
+
+  <!-- Scheduler (Cron) -->
+  <path d="M 500 450 L 500 520 L 330 520" fill="none" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <rect x="330" y="500" width="120" height="40" rx="5" fill="#fdecea" stroke="#e74c3c"/>
+  <text x="390" y="525" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#c0392b" text-anchor="middle">Cron 调度器</text>
+
+  <!-- Actions / Delivery -->
+  <rect x="770" y="80" width="180" height="400" rx="10" ry="10" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="860" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7f8c8d" text-anchor="middle">输出与行动</text>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#34495e">
+    <rect x="790" y="130" width="140" height="50" rx="5" fill="#fff" stroke="#27ae60"/>
+    <text x="860" y="160" text-anchor="middle">IM 报表推送</text>
+
+    <rect x="790" y="200" width="140" height="50" rx="5" fill="#fff" stroke="#27ae60"/>
+    <text x="860" y="230" text-anchor="middle">邮件通知</text>
+
+    <rect x="790" y="270" width="140" height="50" rx="5" fill="#fff" stroke="#e67e22"/>
+    <text x="860" y="300" text-anchor="middle">Webhook 触发自动化</text>
+
+    <rect x="790" y="340" width="140" height="50" rx="5" fill="#fff" stroke="#e67e22"/>
+    <text x="860" y="370" text-anchor="middle">自动扩缩容/调整</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <line x1="230" y1="280" x2="300" y2="280" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="700" y1="280" x2="770" y2="280" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Markers -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#34495e" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#e74c3c" />
+    </marker>
+  </defs>
+
+  <!-- Labels on arrows -->
+  <text x="265" y="270" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" text-anchor="middle">采集数据</text>
+  <text x="735" y="270" font-family="Arial, sans-serif" font-size="11" fill="#7f8c8d" text-anchor="middle">推送结果</text>
+</svg>

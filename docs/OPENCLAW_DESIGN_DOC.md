@@ -106,5 +106,15 @@ Gateway 在加载技能时会根据 `metadata` 进行自动过滤：
 
 这种设计确保了用户可以轻松覆盖内置行为，或为特定 Agent 量身定制功能。
 
+## 8. 典型应用场景：云计算运维数据分析 (Application Scenarios)
+
+OpenClaw 可以深度应用于云计算运维的数据分析工作，通过 Skill 和 Cron 系统的编排，实现从监控到行动的自动化。
+
+- **自动化采集与预处理**: 使用 `cloud-metric-collector` Skill 定时抓取云原生环境下的指标和日志，并完成 ETL 转换。
+- **智能化分析与报表**: 结合 Python 数据处理 Skill，自动生成 CPU/内存趋势分析及云成本优化建议，并流式输出至 Canvas 实时查看。
+- **闭环自动化**: 分析结果可触发 Webhook 调用，实现基于数据的自动故障恢复或资源扩缩容。
+
+详见：[OpenClaw 云计算运维解决方案](OPENCLAW_CLOUD_OM_SOLUTION.md)
+
 ---
 *文档生成日期: 2025年1月*
